@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v0.1.0 (beta) by @bumbleshoot
+ * Auto Cast Buffs v0.2.0 (beta) by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -127,40 +127,50 @@ function fetch(url, params) {
  * Run this function every 15 mins.
  */
 function castBuffs() {
+  try {
 
-  let user = JSON.parse(fetch("https://habitica.com/api/v3/user", GET_PARAMS)).data;
-  
-  if (user.stats.lvl < 13) {
-    console.log("User level " + user.stats.lvl + ", cannot cast buffs");
-    return;
-  }
-  
-  let skillName;
-  let spellId;
-  let manaCost;
-  if (user.stats.class == "wizard") {
-    skillName = "Earthquake";
-    spellId = "earth";
-    manaCost = 35;
-  } else if (user.stats.class == "rogue") {
-    skillName = "Tools of the Trade";
-    spellId = "toolsOfTrade";
-    manaCost = 25;
-  } else if (user.stats.class == "healer") {
-    skillName = "Protective Aura";
-    spellId = "protectAura";
-    manaCost = 30;
-  } else {
-    skillName = "Valorous Presence"
-    spellId = "valorousPresence";
-    manaCost = 20;
-  }
+    let user = JSON.parse(fetch("https://habitica.com/api/v3/user", GET_PARAMS)).data;
 
-  let numCasts = Math.floor((user.stats.mp - RESERVE_MANA) / manaCost);
+    if (user.stats.lvl < 13) {
+      console.log("User level " + user.stats.lvl + ", cannot cast buffs");
+      return;
+    }
 
-  console.log("Casting " + skillName + " " + numCasts + " time(s)");
+    let skillName;
+    let spellId;
+    let manaCost;
+    if (user.stats.class == "wizard") {
+      skillName = "Earthquake";
+      spellId = "earth";
+      manaCost = 35;
+    } else if (user.stats.class == "rogue") {
+      skillName = "Tools of the Trade";
+      spellId = "toolsOfTrade";
+      manaCost = 25;
+    } else if (user.stats.class == "healer") {
+      skillName = "Protective Aura";
+      spellId = "protectAura";
+      manaCost = 30;
+    } else {
+      skillName = "Valorous Presence"
+      spellId = "valorousPresence";
+      manaCost = 20;
+    }
 
-  for (let i=0; i<numCasts; i++) {
-    fetch("https://habitica.com/api/v3/user/class/cast/" + spellId, POST_PARAMS);
+    let numCasts = Math.floor((user.stats.mp - RESERVE_MANA) / manaCost);
+
+    console.log("Casting " + skillName + " " + numCasts + " time(s)");
+
+    for (let i=0; i<numCasts; i++) {
+      fetch("https://habitica.com/api/v3/user/class/cast/" + spellId, POST_PARAMS);
+    }
+
+  } catch (e) {
+    MailApp.sendEmail(
+      Session.getEffectiveUser().getEmail(),
+      DriveApp.getFileById(ScriptApp.getScriptId()).getName() + " failed!",
+      e.stack
+    );
+    throw e;
   }
 }
