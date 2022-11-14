@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v0.2.0 (beta) by @bumbleshoot
+ * Auto Cast Buffs v0.2.1 (beta) by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
