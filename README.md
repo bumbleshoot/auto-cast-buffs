@@ -1,3 +1,5 @@
+***Auto Cast Buffs is currently in beta. I need beta testers to try it out and let me know if they run into any bugs. There are still some edge cases that haven't been tested yet, so there's a small chance you will see an error while using it. If you're not okay with this, best to wait until Version 1 is released!***
+
 ## Summary
 Auto Cast Buffs is an automation script for Habitica that casts stat-buffing skills every 15 mins. The script checks the player's class to determine which skill to cast, and checks the player's mana to determine how many times to cast that skill. The player can configure how much mana they want left over after casting.
 
