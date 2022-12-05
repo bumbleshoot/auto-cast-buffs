@@ -54,7 +54,7 @@ You need to use a desktop computer for this. It will not work on a phone or tabl
 5. Follow the [Setup Instructions](#setup-instructions) above.
 
 ## Contact
-:grey_question: Questions: [https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/q-a](https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/q-a)  
-:bulb: Suggestions: [https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/suggestions](https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/suggestions)  
-:lady_beetle: Report a bug: [https://github.com/bumbleshoot/auto-cast-buffs/issues](https://github.com/bumbleshoot/auto-cast-buffs/issues)  
-:heartpulse: Donate: [https://github.com/sponsors/bumbleshoot](https://github.com/sponsors/bumbleshoot)
+❔ Questions: [https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/q-a](https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/q-a)  
+💡 Suggestions: [https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/suggestions](https://github.com/bumbleshoot/auto-cast-buffs/discussions/categories/suggestions)  
+🐞 Report a bug: [https://github.com/bumbleshoot/auto-cast-buffs/issues](https://github.com/bumbleshoot/auto-cast-buffs/issues)  
+💗 Donate: [https://github.com/sponsors/bumbleshoot](https://github.com/sponsors/bumbleshoot)
