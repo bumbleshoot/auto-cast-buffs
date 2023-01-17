@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.0 by @bumbleshoot
+ * Auto Cast Buffs v1.0.1 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -101,7 +101,23 @@ function fetch(url, params) {
     }
 
     // call API
-    let response = UrlFetchApp.fetch(url, params);
+    let response;
+    let addressUnavailable = 0;
+    while (true) {
+      try {
+        response = UrlFetchApp.fetch(url, params);
+        break;
+
+      // if address unavailable, wait 5 seconds & try again
+      } catch (e) {
+        if (addressUnavailable < 12 && e.stack.includes("Address unavailable")) {
+          addressUnavailable++;
+          Utilities.sleep(5000);
+        } else {
+          throw e;
+        }
+      }
+    }
 
     // store rate limiting data
     scriptProperties.setProperties({
