@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.2 by @bumbleshoot
+ * Auto Cast Buffs v1.0.3 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -36,7 +36,7 @@ function install() {
 }
  
 function uninstall() {
-  for (trigger of ScriptApp.getProjectTriggers()) {
+  for (let trigger of ScriptApp.getProjectTriggers()) {
     ScriptApp.deleteTrigger(trigger);
   }
 }
