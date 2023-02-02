@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.4 by @bumbleshoot
+ * Auto Cast Buffs v1.0.5 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -83,15 +83,14 @@ function validateConstants() {
  * Retries failed API calls up to 2 times, retries for up to 1 min if 
  * Habitica's servers are down, & handles Habitica's rate limiting.
  */
+let rateLimitRemaining;
+let rateLimitReset;
 function fetch(url, params) {
 
   // try up to 3 times
   for (let i=0; i<3; i++) {
 
     // if rate limit reached
-    let properties = scriptProperties.getProperties();
-    let rateLimitRemaining = properties["X-RateLimit-Remaining"];
-    let rateLimitReset = properties["X-RateLimit-Reset"];
     if (rateLimitRemaining != null && Number(rateLimitRemaining) < 1) {
 
       // wait until rate limit reset
@@ -121,10 +120,8 @@ function fetch(url, params) {
     }
 
     // store rate limiting data
-    scriptProperties.setProperties({
-      "X-RateLimit-Reset": response.getHeaders()["x-ratelimit-reset"],
-      "X-RateLimit-Remaining": response.getHeaders()["x-ratelimit-remaining"]
-    });
+    rateLimitRemaining = response.getHeaders()["x-ratelimit-remaining"];
+    rateLimitReset = response.getHeaders()["x-ratelimit-reset"];
 
     // if success, return response
     if (response.getResponseCode() < 300) {
