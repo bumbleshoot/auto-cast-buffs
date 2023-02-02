@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.5 by @bumbleshoot
+ * Auto Cast Buffs v1.0.6 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -69,6 +69,10 @@ function validateConstants() {
   if (typeof RESERVE_MANA !== "number" || RESERVE_MANA < 0) {
     console.log("ERROR: RESERVE_MANA must be a positive number.\n\neg. const RESERVE_MANA = 0;\n    const RESERVE_MANA = 22.5;");
     valid = false;
+  }
+
+  if (!valid) {
+    console.log("Please fix the above errors and run the install function again.");
   }
 
   return valid;
