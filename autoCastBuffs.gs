@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.6 by @bumbleshoot
+ * Auto Cast Buffs v1.0.7 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -195,6 +195,7 @@ function castBuffs() {
       DriveApp.getFileById(ScriptApp.getScriptId()).getName() + " failed!",
       e.stack
     );
+    console.error(e.stack);
     throw e;
   }
 }
