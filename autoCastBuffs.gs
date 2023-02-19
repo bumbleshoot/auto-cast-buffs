@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.7 by @bumbleshoot
+ * Auto Cast Buffs v1.0.8 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -27,15 +27,37 @@ const POST_PARAMS = Object.assign({ "method": "post" }, PARAMS);
 const scriptProperties = PropertiesService.getScriptProperties();
  
 function install() {
+
+  // if settings are valid
   if (validateConstants()) {
+
+    // delete triggers
+    deleteTriggers()
+
+    // create trigger
+    console.log("Creating trigger...")
+
     ScriptApp.newTrigger("castBuffs")
       .timeBased()
       .everyMinutes(15)
       .create();
   }
+
+  console.log("Done!")
 }
  
 function uninstall() {
+
+  // delete triggers
+  deleteTriggers()
+
+  console.log("Done!")
+}
+
+function deleteTriggers() {
+
+  console.log("Deleting triggers...")
+
   for (let trigger of ScriptApp.getProjectTriggers()) {
     ScriptApp.deleteTrigger(trigger);
   }
