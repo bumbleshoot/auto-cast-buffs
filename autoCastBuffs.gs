@@ -1,5 +1,5 @@
 /**
- * Auto Cast Buffs v1.0.9 by @bumbleshoot
+ * Auto Cast Buffs v1.0.10 by @bumbleshoot
  * 
  * See GitHub page for info & setup instructions:
  * https://github.com/bumbleshoot/auto-cast-buffs
@@ -173,9 +173,7 @@ function fetch(url, params) {
 function castBuffs() {
   try {
 
-    let user = JSON.parse(fetch("https://habitica.com/api/v3/user", GET_PARAMS)).data;
-
-    if (user.stats.lvl < 13) {
+    if (getUser().stats.lvl < 13) {
       console.log("User level " + user.stats.lvl + ", cannot cast buffs");
       return;
     }
@@ -218,4 +216,34 @@ function castBuffs() {
     console.error(e.stack);
     throw e;
   }
+}
+
+/**
+ * getUser(updated)
+ * 
+ * Fetches user data from the Habitica API if it hasn't already 
+ * been fetched during this execution, or if updated is set to 
+ * true.
+ */
+let user;
+function getUser(updated) {
+  if (updated || typeof user === "undefined") {
+    for (let i=0; i<3; i++) {
+      user = fetch("https://habitica.com/api/v3/user", GET_PARAMS);
+      try {
+        user = JSON.parse(user).data;
+        if (typeof user.party?._id !== "undefined") {
+          scriptProperties.setProperty("PARTY_ID", user.party._id);
+        }
+        break;
+      } catch (e) {
+        if (i < 2 && (e.stack.includes("Unterminated string in JSON") || e.stack.includes("Expected ',' or '}' after property value in JSON at position"))) {
+          continue;
+        } else {
+          throw e;
+        }
+      }
+    }
+  }
+  return user;
 }
