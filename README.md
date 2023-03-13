@@ -2,7 +2,7 @@
 Auto Cast Buffs is an automation script for Habitica that casts stat-buffing skills every 15 mins. The script checks the player's class to determine which skill to cast, and checks the player's mana to determine how many times to cast that skill. The player can configure how much mana they want left over after casting.
 
 ## Before Installing
-You need to use a desktop computer for this. It will not work on a phone or tablet! First you must uninstall any scripts that do the same thing(s) as Auto Cast Buffs. For example, if you are running the [Auto Cast Party Buff Skills](https://habitica.fandom.com/wiki/Google_Apps_Script#Auto_Cast_Party_Buff_Skills) script, you need to uninstall it, because Auto Cast Buffs also casts buffs, and these two scripts will conflict with each other. To uninstall a script:
+It is highly recommended that you use a desktop computer for this, as some of the steps don't work well on mobile. First you must uninstall any scripts that do the same thing(s) as Auto Cast Buffs. For example, if you are running the [Auto Cast Party Buff Skills](https://habitica.fandom.com/wiki/Google_Apps_Script#Auto_Cast_Party_Buff_Skills) script, you need to uninstall it, because Auto Cast Buffs also casts buffs, and these two scripts will conflict with each other. To uninstall a script:
 1. Click [here](https://script.google.com/home) to see a list of your scripts. If you're not already signed into your Google account, click the "Start Scripting" button and sign in. Then click on "My Projects" in the main menu on the left.
 2. Click on the script you want to uninstall.
 3. Click the blue "Deploy" button near the top of the page, then click "Manage deployments".
@@ -18,7 +18,7 @@ You need to use a desktop computer for this. It will not work on a phone or tabl
 13. Repeat the above steps for every script you need to uninstall.
 
 ## Setup Instructions
-You need to use a desktop computer for this. It will not work on a phone or tablet! Make sure you read the [Before Installing](#before-installing) section above, and follow the instructions there if applicable!
+It is highly recommended that you use a desktop computer for this, as some of the steps don't work well on mobile. Make sure you read the [Before Installing](#before-installing) section above, and follow the instructions there if applicable!
 1. Click [here](https://script.google.com/d/1zP3Qb7F0HJyyVCMap_Fj_g_UXUAiGHiAZaytmwl5s-CDJ9i3LVKlZ4jC/edit?usp=sharing) to go to the Auto Cast Buffs script. If you're not already signed into your Google account, you will be asked to sign in.
 2. In the main menu on the left, click on "Overview" (looks like a lowercase letter i inside a circle).
 3. Click the "Make a copy" button (looks like two pages of paper).
@@ -33,20 +33,21 @@ You need to use a desktop computer for this. It will not work on a phone or tabl
 You're all done! If you need to change the settings or uninstall the script at some point, follow the steps below.
 
 ## Changing the Settings
-You need to use a desktop computer for this. It will not work on a phone or tablet!
+It is highly recommended that you use a desktop computer for this, as some of the steps don't work well on mobile.
 1. [Click here](https://script.google.com/home) to see a list of your scripts. If you're not already signed into your Google account, click the "Start Scripting" button and sign in.  Then click on "My Projects" in the main menu on the left.
 2. Click on "Auto Cast Buffs".
 3. Update `RESERVE_MANA` to the amount of mana you want left over after the script casts your buffs for you. Only edit the number in between the `=` and the `;`.
 4. Click the "Save project" button near the top of the page (looks like a floppy disk).
 
 ## Uninstalling the Script
+It is highly recommended that you use a desktop computer for this, as some of the steps don't work well on mobile.
 1. [Click here](https://script.google.com/home) to see a list of your scripts. If you're not already signed into your Google account, click the "Start Scripting" button and sign in.  Then click on "My Projects" in the main menu on the left.
 2. Click on "Auto Cast Buffs".
 3. Click the drop-down menu to the right of the "Debug" button, near the top of the page. Select "uninstall" from the drop-down.
 4. Click the "Run" button to the left of the "Debug" button. Wait for it to say "Execution completed".
 
 ## Updating the Script
-You need to use a desktop computer for this. It will not work on a phone or tablet!
+It is highly recommended that you use a desktop computer for this, as some of the steps don't work well on mobile.
 1. Follow the steps in [Uninstalling the Script](#uninstalling-the-script) above.
 2. Copy & paste your settings (`const`s) into a text editor so you can reference them while setting up the new version.
 3. In the main menu on the left, click on "Overview" (looks like a lowercase letter i inside a circle).
