@@ -5,9 +5,9 @@
  * https://github.com/bumbleshoot/auto-cast-buffs
  */
 
- const USER_ID = "";
- const API_TOKEN = "";
- const RESERVE_MANA = 0;
+const USER_ID = "";
+const API_TOKEN = "";
+const RESERVE_MANA = 0;
  
 /*************************************\
  *  DO NOT EDIT ANYTHING BELOW HERE  *

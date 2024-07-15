@@ -19,16 +19,17 @@ It is highly recommended that you use a desktop computer for this, as some of th
 
 ## Setup Instructions
 It is highly recommended that you use a desktop computer for this, as some of the steps don't work well on mobile. Make sure you read the [Before Installing](#before-installing) section above, and follow the instructions there if applicable!
-1. Click [here](https://script.google.com/d/1zP3Qb7F0HJyyVCMap_Fj_g_UXUAiGHiAZaytmwl5s-CDJ9i3LVKlZ4jC/edit?usp=sharing) to go to the Auto Cast Buffs script. If you're not already signed into your Google account, you will be asked to sign in.
-2. In the main menu on the left, click on "Overview" (looks like a lowercase letter i inside a circle).
-3. Click the "Make a copy" button (looks like two pages of paper).
-4. At the top of your screen, click on "Copy of Auto Cast Buffs". Rename it "Auto Cast Buffs" and click the "Rename" button.
-5. Click [here](https://habitica.com/user/settings/api) to open your API Settings. Highlight and copy your User ID (it looks something like this: `35c3fb6f-fb98-4bc3-b57a-ac01137d0847`). In the Auto Cast Buffs script, paste your User ID between the quotations where it says `const USER_ID = "";`. It should now look something like this: `const USER_ID = "35c3fb6f-fb98-4bc3-b57a-ac01137d0847";`
-6. On the same page where you copied your User ID, click the "Show API Token" button, and copy your API Token. In the Auto Cast Buffs script, paste your API Token between the quotations where it says `const API_TOKEN = "";`. It should now look something like this: `const API_TOKEN = "35c3fb6f-fb98-4bc3-b57a-ac01137d0847";`
-7. Update `RESERVE_MANA` to the amount of mana you want left over after the script casts your buffs for you. Only edit the number in between the `=` and the `;`.
-8. Click the "Save project" button near the top of the page (looks like a floppy disk).
-9. Click the drop-down menu to the right of the "Debug" button, near the top of the page. Select "install" from the drop-down.
-10. Click the "Run" button to the left of the "Debug" button. Wait for it to say "Execution completed".
+1. Click [here](https://script.google.com/d/1zP3Qb7F0HJyyVCMap_Fj_g_UXUAiGHiAZaytmwl5s-CDJ9i3LVKlZ4jC?usp=sharing) to go to the Auto Cast Buffs script. If you're not already signed into your Google account, you will be asked to sign in.
+2. Click the "Make a copy" button (looks like two pages of paper).
+3. At the top of your screen, click on "Copy of Auto Cast Buffs". Rename it "Auto Cast Buffs" and click the "Rename" button.
+4. Click [here](https://habitica.com/user/settings/api) to open your API Settings. Highlight and copy your User ID (it looks something like this: `35c3fb6f-fb98-4bc3-b57a-ac01137d0847`). In the Auto Cast Buffs script, paste your User ID between the quotations where it says `const USER_ID = "";`. It should now look something like this: `const USER_ID = "35c3fb6f-fb98-4bc3-b57a-ac01137d0847";`
+5. On the same page where you copied your User ID, click the "Show API Token" button, and copy your API Token. In the Auto Cast Buffs script, paste your API Token between the quotations where it says `const API_TOKEN = "";`. It should now look something like this: `const API_TOKEN = "35c3fb6f-fb98-4bc3-b57a-ac01137d0847";`
+6. Update `RESERVE_MANA` to the amount of mana you want left over after the script casts your buffs for you. Only edit the number in between the `=` and the `;`.
+7. Click the "Save project" button near the top of the page (looks like a floppy disk).
+8. Click the drop-down menu to the right of the "Debug" button, near the top of the page. Select "install" from the drop-down.
+9. Click the "Run" button to the left of the "Debug" button.
+10. (If this is your first time running the script) Click the "Review permissions" button and select your Google account. Click on "Advanced", then "Go to Auto Cast Buffs (unsafe)". (Don't worry, it is safe!) Then click "Continue", then "Allow".
+11. Wait for the "Execution completed" message in the Execution Log.
 
 You're all done! If you need to change the settings or uninstall the script at some point, follow the steps below.
 
